@@ -1,0 +1,27 @@
+<p>about works!</p>
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th>User Name</th>
+        <th>Email Address</th>
+        <th>Gender</th>
+        <th>stream</th>
+        <th>Subject</th>
+        <th>Image</th>
+        <th>DELETE</th>
+        <th>UPDATE</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let u of users">
+       <td>{{u.uname}}</td>
+       <td>{{u.uemail}}</td>
+       <td>{{u.gender}}</td>
+       <td>{{u.stream}}</td>
+       <td>{{u.subject}}</td> 
+       <td><img [src]="'http://localhost:2000/product_img/'+u.pimg" class="img_css" /></td> 
+       <td><input type="button" class="btn btn-danger" value="DELETE" (click)="del(u._id);"/></td>
+       <td><a class="btn btn-success" [routerLink]="'/editproduct/'+u._id">EDIT</a></td>     
+      </tr>
+    </tbody>
+  </table>
